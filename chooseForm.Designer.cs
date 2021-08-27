@@ -45,6 +45,7 @@
             this.lbActors = new System.Windows.Forms.ListBox();
             this.lbGenre = new System.Windows.Forms.ListBox();
             this.btBuy = new System.Windows.Forms.Button();
+            this.btOrdList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -128,7 +129,7 @@
             // lbGenreSearch
             // 
             this.lbGenreSearch.FormattingEnabled = true;
-            this.lbGenreSearch.Location = new System.Drawing.Point(25, 463);
+            this.lbGenreSearch.Location = new System.Drawing.Point(25, 446);
             this.lbGenreSearch.Name = "lbGenreSearch";
             this.lbGenreSearch.Size = new System.Drawing.Size(301, 175);
             this.lbGenreSearch.TabIndex = 8;
@@ -147,7 +148,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(21, 426);
+            this.label5.Location = new System.Drawing.Point(21, 407);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 23);
             this.label5.TabIndex = 10;
@@ -165,7 +166,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(13, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 682);
+            this.groupBox1.Size = new System.Drawing.Size(360, 627);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск фильмов";
@@ -222,12 +223,24 @@
             this.btBuy.UseVisualStyleBackColor = false;
             this.btBuy.Click += new System.EventHandler(this.btBuy_Click);
             // 
+            // btOrdList
+            // 
+            this.btOrdList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btOrdList.Location = new System.Drawing.Point(13, 643);
+            this.btOrdList.Name = "btOrdList";
+            this.btOrdList.Size = new System.Drawing.Size(360, 48);
+            this.btOrdList.TabIndex = 17;
+            this.btOrdList.Text = "Список заказов на данный сеанс";
+            this.btOrdList.UseVisualStyleBackColor = true;
+            this.btOrdList.Click += new System.EventHandler(this.btOrdList_Click);
+            // 
             // chooseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(1386, 703);
+            this.Controls.Add(this.btOrdList);
             this.Controls.Add(this.btBuy);
             this.Controls.Add(this.lbGenre);
             this.Controls.Add(this.lbActors);
@@ -267,5 +280,6 @@
         private System.Windows.Forms.ListBox lbActors;
         private System.Windows.Forms.ListBox lbGenre;
         private System.Windows.Forms.Button btBuy;
+        private System.Windows.Forms.Button btOrdList;
     }
 }

@@ -24,28 +24,6 @@ namespace Cinema
                 dataGridView1.Rows.Clear();
                 dataGridView1.Columns.Clear();
                 show_sessions(get_base_query() + " ORDER BY time DESC ");
-                //dataGridView1.Rows.Clear();
-                //dataGridView1.Columns.Clear();
-                //dataGridView1.ColumnCount = fields = 7;
-                ////ID фильма
-                //dataGridView1.Columns[0].HeaderText = ""; dataGridView1.Columns[0].Width = 1;
-                ////ID сеанса
-                //dataGridView1.Columns[1].HeaderText = ""; dataGridView1.Columns[1].Width = 1;
-                //dataGridView1.Columns[2].HeaderText = "Название фильма"; dataGridView1.Columns[2].Width = 120;
-                //dataGridView1.Columns[3].HeaderText = "Время сеанса"; dataGridView1.Columns[3].Width = 120;
-                //dataGridView1.Columns[4].HeaderText = "Цена за 1 билет (руб)"; dataGridView1.Columns[4].Width = 80;
-                //dataGridView1.Columns[5].HeaderText = "Название зала"; dataGridView1.Columns[5].Width = 100;
-                //dataGridView1.Columns[6].HeaderText = ""; dataGridView1.Columns[6].Width = 1;
-                //NpgsqlCommand cmd1 = new NpgsqlCommand(query1, con);
-                //int ind = 0;
-                //NpgsqlDataReader reader1 = cmd1.ExecuteReader();
-                //foreach (DbDataRecord dbDataRecord in reader1)
-                //{
-                //    dataGridView1.RowCount++;
-                //    for (int i = 0; i < fields; i++)
-                //        dataGridView1[i, ind].Value = dbDataRecord[i].ToString();
-                //    ind++;
-                //}
                 Login.connectionReset(con);
                 string query = "Select name_actor from (Actors_list JOIN Actors ON actor=IDactor)";
                 NpgsqlCommand cmd = new NpgsqlCommand(query, con);
@@ -62,12 +40,14 @@ namespace Cinema
                 {
                     lbGenreSearch.Items.Add(dbDataRecord[0].ToString());
                 }
-                //string[] arr = new string[] { "Nicole Kidman", "Leonardo Dicaprio" };
-                //lbActorsSearch.Items.AddRange(arr);
             }
             if (Login.purch_id == null && Login.stuff_id == null)
             {
                 btBuy.Visible = false;
+            }
+            if (Login.stuff_id == null)
+            {
+                btOrdList.Visible = false;
             }
             dataGridView1.CellClick += film_info;
         }
@@ -180,6 +160,13 @@ namespace Cinema
                 BuyForm buyForm = new BuyForm(int.Parse(id_session), int.Parse(id_holl), int.Parse(price), rows_qty, places_qty);
                 buyForm.Show();
             }
+        }
+
+        private void btOrdList_Click(object sender, EventArgs e)
+        {
+            string id_session = dataGridView1[1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+            OrdersForm ordersForm = new OrdersForm(id_session);
+            ordersForm.Show();
         }
     }
 }

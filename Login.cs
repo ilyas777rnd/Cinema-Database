@@ -55,8 +55,8 @@ namespace Cinema
                     }
                     if (password.Equals(passw.Text))
                     {
-                        //ManagerForm manager = new ManagerForm();
-                        //manager.Show();
+                        chooseForm chooseForm = new chooseForm();
+                        chooseForm.Show();
                     }
                     else MessageBox.Show("Неверный логин или пароль!");
                 }

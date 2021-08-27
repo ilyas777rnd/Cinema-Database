@@ -40,3 +40,4 @@ C:\Users\sulin\source\repos\Cinema\obj\Debug\Cinema.chooseForm.resources
 C:\Users\sulin\source\repos\Cinema\obj\Debug\Cinema.ActorsAndGenre.resources
 C:\Users\sulin\source\repos\Cinema\obj\Debug\Cinema.BuyForm.resources
 C:\Users\sulin\source\repos\Cinema\obj\Debug\Cinema.Backup.resources
+C:\Users\sulin\source\repos\Cinema\obj\Debug\Cinema.OrdersForm.resources

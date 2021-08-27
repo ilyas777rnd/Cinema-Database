@@ -122,10 +122,10 @@ namespace Cinema
                 string ticket_query = $"INSERT into Tickets (orderr, place, session) " +
                     $" VALUES (last_ord(),find_place_id({row},{place},{holl_id}),{session_id}) ";
                 new NpgsqlCommand(ticket_query, con).ExecuteNonQuery();
-                using (StreamWriter writer = new StreamWriter("C:\\Users\\sulin\\Desktop\\OJ.txt")) 
-                {
-                    writer.Write(ticket_query);
-                }
+                //using (StreamWriter writer = new StreamWriter("C:\\Users\\sulin\\Desktop\\OJ.txt")) 
+                //{
+                //    writer.Write(ticket_query);
+                //}
                 dataGridView1[3, dataGridView1.CurrentCell.RowIndex].Value = "Занято";
                 MessageBox.Show($"Ряд {row}, место {place} успешно забронировано!");
                 lbTickets.Items.Add($"Ряд {row} , место {place}");
